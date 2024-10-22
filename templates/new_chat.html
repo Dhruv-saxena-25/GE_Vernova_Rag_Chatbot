@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Eco-Friendly AI Chat</title>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'eco-light': '#E3F2E5',
+                        'eco-medium': '#4CAF50',
+                        'eco-dark': '#2E7D32',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-eco-light min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+        <nav class="mb-8">
+            <form action="/">
+                <button type="submit"
+                    class="bg-white text-eco-dark border border-eco-dark hover:bg-eco-dark hover:text-white transition-colors duration-300 font-semibold py-2 px-4 rounded-full shadow-md">
+                    &larr; Back
+                </button>
+            </form>
+        </nav>
+
+        <header class="text-center mb-12">
+            <h1 class="text-5xl font-bold text-[#005E60]">
+                Eco-Friendly AI Chat
+            </h1>
+            <p class="text-eco-medium mt-2">Sustainable conversations for a greener future</p>
+        </header>
+
+        <main class="bg-white rounded-lg shadow-xl overflow-hidden max-w-4xl mx-auto border-t-4 border-eco-medium">
+            <div class="bg-gradient-to-r from-eco-medium to-eco-dark p-4">
+                <h2 class="text-xl font-bold text-white">Ask an Eco-Question</h2>
+            </div>
+
+            <div class="p-6">
+                {% if chat_history %}
+                <ul class="space-y-4 mb-6">
+                    {% for message in chat_history %}
+                    <li
+                        class="p-4 rounded-lg shadow {% if loop.index % 2 == 0 %}bg-eco-light{% else %}bg-white border border-eco-medium{% endif %}">
+                        <p class="text-gray-800 font-medium">{{ message.content }}</p>
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% else %}
+                <div class="text-center py-8">
+                    <p class="text-eco-medium font-medium">No chat history yet. Start an eco-friendly conversation!</p>
+                </div>
+                {% endif %}
+
+                <form action="/chat" method="post" class="mt-6">
+                    <div class="flex space-x-4">
+                        <input type="text" name="user_question" id="user_question" required
+                            class="flex-grow bg-eco-light border border-eco-medium rounded-full py-3 px-6 focus:outline-none focus:ring-2 focus:ring-eco-dark focus:border-transparent"
+                            placeholder="Type your eco-question here...">
+                        <button type="submit"
+                            class="bg-gradient-to-r from-eco-medium to-eco-dark text-white font-bold py-3 px-8 rounded-full hover:opacity-90 transition-opacity duration-300">
+                            Send
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

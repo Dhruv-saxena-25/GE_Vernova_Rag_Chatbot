@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GE Vernova - Sustainable Energy Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'ge-green': '#34D399',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .card-3d {
+            transition: all 0.3s ease;
+        }
+
+        .card-3d:hover {
+            transform: translateY(-10px) rotateX(5deg) rotateY(5deg);
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100">
+    <!-- Navbar -->
+    <nav class="bg-white bg-opacity-70 shadow-md fixed w-full z-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex-shrink-0 flex items-center">
+                    <img class="h-8 w-auto"
+                        src="https://res.cloudinary.com/dtsuvx8dz/image/upload/v1729585400/mvmxwgcqcziyabjathbq.svg"
+                        alt="GE Vernova Logo">
+                </div>
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <input type="text" placeholder="Search"
+                            class="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-ge-green focus:border-transparent">
+                    </div>
+                    <div class="ml-4">
+                        <button
+                            class="bg-gray-900 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-xl text-sm transition duration-300 ease-in-out transform   shadow-lg">
+                            Login
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+        <!-- Moving background pattern -->
+        <div id="backgroundPattern" class="absolute inset-0 z-0 bg-repeat" style="
+                background-image: url('https://res.cloudinary.com/dtsuvx8dz/image/upload/v1729578216/yzqddqsqyqxrdivm8wqk.svg');
+                background-size: 600px 600px;
+                opacity: 0.1;
+            "></div>
+
+        <!-- Content -->
+        <div class="relative z-10 container max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class=" text-left mb-8 md:mb-0">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4 text-[#005E60] drop-shadow-md">
+                    Powering a Sustainable Future
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 text-gray-600">
+                    Welcome to <span class="text-[#005E60] font-medium">GE Vernova</span>'s AI-powered Sustainability
+                    Chatbot
+                </p>
+                <div>
+                    <a href="{{ url_for('pdf_chat') }}"
+                        class="bg-gray-900 hover:bg-gray-800 text-white font-bold py-3 px-6 rounded-xl text-sm transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105 shadow-lg inline-block mr-4">
+                        Start Chatting
+                    </a>
+                    <button
+                        class="bg-white border-2 text-gray-600 hover:bg-gray-50 font-bold py-3 px-6 rounded-xl text-sm transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105 shadow-lg inline-block">
+                        Know More
+                    </button>
+                </div>
+            </div>
+            <div class="md:w-1/2">
+                <img src="https://res.cloudinary.com/dtsuvx8dz/image/upload/v1718823165/p9h2ogakwejqnxceou9k.png"
+                    alt="GE Vernova Sustainability" class="w-[] h-auto ">
+            </div>
+    </section>
+    <!-- Chatbot Features Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 justify-center">
+            <h2 class="text-3xl font-bold text-center mb-12 text-[#005E60]">How Our Chatbot Helps You</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="card-3d bg-white rounded-lg overflow-hidden shadow-lg">
+                    <img src="https://res.cloudinary.com/dtsuvx8dz/image/upload/v1714038211/sbihc9eewmn1hnuufxlw.gif"
+                        alt="Energy Insights" class="w-full h-fit object-cover px-4 ">
+                    <div class="p-6 mt-">
+                        <h3 class="font-bold text-xl mb-2 text-[#005E60] bg-white">Energy Insights</h3>
+                        <p class="text-gray-700">Get real-time insights on energy consumption and efficiency. Our AI
+                            analyzes patterns to help you optimize your energy usage.</p>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="card-3d bg-white rounded-lg overflow-hidden shadow-lg">
+                    <img src="https://res.cloudinary.com/dtsuvx8dz/image/upload/v1714291562/c5bknh1zjlvpxfhfgpjl.gif"
+                        alt="Sustainability Planning" class="w-full h-fit object-cover px-4 ">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2 text-[#005E60]">Sustainability Planning</h3>
+                        <p class="text-gray-700">Develop comprehensive sustainability plans with our AI assistant. Get
+                            tailored recommendations for reducing your carbon footprint.</p>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="card-3d bg-white rounded-lg overflow-hidden shadow-lg">
+                    <img src="https://res.cloudinary.com/dtsuvx8dz/image/upload/v1714221256/cobl4aajtqy52ma9bzmm.gif"
+                        alt="24/7 Support" class="w-full h-fit object-cover px-4 drop-shadow-md">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2 text-[#005E60]">24/7 Support</h3>
+                        <p class="text-gray-700">Access round-the-clock support for all your energy-related queries. Our
+                            chatbot is always ready to assist you with instant, accurate information.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="max-w-7xl mx-auto flex justify-center items-center py-8 ">
+
+                <a href="{{ url_for('pdf_chat') }}"
+                    class="bg-gray-900 hover:bg-gray-800 text-white font-bold py-3 px-6 rounded-full text-sm transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105 shadow-lg">
+                    Start Chatting
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <script>
+        // GSAP animation for the background
+        const bg = document.getElementById('backgroundPattern');
+        gsap.to(bg, {
+            backgroundPosition: '100% 100%',
+            duration: 50,
+            ease: 'none',
+            repeat: -1,
+        });
+    </script>
+</body>
+
+</html>
