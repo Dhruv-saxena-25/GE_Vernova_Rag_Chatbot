@@ -3,7 +3,7 @@ from src.retriever import retrieval
 
 # Flask App
 app = Flask(__name__)
-app.secret_key = 'your_secret_key'  # Needed for session handling
+app.secret_key = 'dhruv'  # Needed for session handling
 
 @app.route('/')
 def home():
