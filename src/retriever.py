@@ -83,12 +83,20 @@ def retrieval(question):
     {"input": question},
     config={
      "configurable": {"session_id": "abc123"}},
-)["answer"]
+)
+    
+    source_documents = response.get("context", [])
+    page_number = []
+    for doc in source_documents:
+        pages = doc.metadata.get('page', 'Unknown')
+        # text_excerpt = doc.page_content[:200]  # Get the first 200 characters as a preview
+        page_number.append(pages)
      
-    return response
+    return response, page_number
 
 if __name__ == "__main__":
     
     question = "Tell me details about the ge vernova?"
-    response = retrieval(question)
-    print(response)
+    response, page_number = retrieval(question)
+    print(response["answer"])
+    print(page_number)

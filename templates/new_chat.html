@@ -59,7 +59,15 @@
                     <p class="text-eco-medium font-medium">No chat history yet. Start an eco-friendly conversation!</p>
                 </div>
                 {% endif %}
-
+                
+                <!-- <h1>Source Document</h1> -->
+                {% for img_base64 in images_base64 %}
+                <div class="mb-4">
+                    <!-- Increase width using w-full for full width or max-w-2xl for a larger max width -->
+                    <img src="data:image/png;base64,{{ img_base64 }}" alt="Page Image" class="w-full max-w-2xl mx-auto rounded shadow">
+                </div>
+                {% endfor %}
+                
                 <form action="/chat" method="post" class="mt-6">
                     <div class="flex space-x-4">
                         <input type="text" name="user_question" id="user_question" required
