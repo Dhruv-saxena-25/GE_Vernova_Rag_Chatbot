@@ -7,19 +7,6 @@ app = Flask(__name__)
 app.secret_key = 'unique'  # Needed for session handling
 
 
-def generate_session_id():
-    """Generate a unique session ID."""
-    return str(uuid.uuid4())
-
-
-@app.before_request
-def manage_session():
-    """Ensure that each session has a unique ID and history."""
-    if 'session_id' not in session:
-        # Generate a new session ID and start a new chat history
-        session['session_id'] = generate_session_id()
-        session['chat_history'] = []
-
 
 @app.route('/')
 def home():

@@ -52,7 +52,7 @@ def retrieval(question):
      If someone requests a summary, you will summarize the entire document. Use your knowledge to enhance the answers
      based on the context. Ensure your responses are relevant to the question and concise yet informative. Please avoid
      repeating sentences or phrases. If someone greets you, make sure to greet them back.
-     if someone greets you greet them back.
+     if someone greets you greet them back do not got to the context give answer by yourself example of greeting like Hello, Hii, How are you etc.
      CONTEXT:
      {context}
 
