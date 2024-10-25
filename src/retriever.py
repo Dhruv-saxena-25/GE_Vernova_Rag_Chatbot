@@ -30,7 +30,8 @@ def retrieval(question):
     
     vectordb = vectors()
 
-    retriever = vectordb.as_retriever()
+    retriever = vectordb.as_retriever(search_type="similarity_score_threshold",
+                          search_kwargs={'score_threshold': 0.2})
     
     retriever_prompt = ("Given a chat history and the latest user question which might reference context in the chat history,"
     "formulate a standalone question which can be understood without the chat history."

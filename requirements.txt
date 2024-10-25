@@ -6,4 +6,5 @@ langchain-openai
 tiktoken
 flask
 python-dotenv
+pdf2image
 
